@@ -116,16 +116,6 @@ h.style.bottom="-20px";
 document.body.appendChild(h);
 setTimeout(()=>h.remove(),6000);
 }
-
-function confetti(){
-for(let i=0;i<50;i++){
-let c=document.createElement("div");
-c.className="confetti";
-c.style.left=Math.random()*100+"vw";
-c.style.background="hsl("+Math.random()*360+",100%,50%)";
-document.body.appendChild(c);
-setTimeout(()=>c.remove(),2500);
-}
 }
 </script>
 
