@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Valentine 💘</title>
 
 <style>
 body{
 margin:0;
-background:black;
-color:white;
+background:white;
 font-family:Arial;
-text-align:center;
 overflow:hidden;
 }
 
@@ -18,37 +18,30 @@ position:fixed;
 inset:0;
 box-shadow:0 0 40px red inset;
 display:none;
+pointer-events:none;
 }
 
-#main{
-display:none;
-margin-top:100px;
-}
-
-h1{color:pink;}
-
-.heart{
-position:fixed;
-font-size:20px;
-animation:float 6s linear infinite;
-}
-
-@keyframes float{
-from{transform:translateY(0);}
-to{transform:translateY(-100vh);}
-}
-
-.confetti{
+#screen{
 position:fixed;
 top:0;
-width:10px;
-height:10px;
-background:white;
-animation:fall 5s linear infinite;
+left:0;
+right:0;
+bottom:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-@keyframes fall{
-to{transform:translateY(100vh);}
+h1{
+font-size:36px;
+color:#ff3366;
+}
+
+p{
+font-size:22px;
 }
 
 #love{
@@ -56,6 +49,30 @@ display:none;
 font-size:60px;
 font-weight:bold;
 color:red;
+margin-top:30px;
+}
+
+.heart{
+position:fixed;
+font-size:30px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-120vh);}
+}
+
+.confetti{
+position:fixed;
+top:0;
+width:12px;
+height:12px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(120vh);}
 }
 </style>
 </head>
@@ -64,13 +81,11 @@ color:red;
 
 <div id="glow"></div>
 
-<div id="main">
-<h1>💘 HAPPY VALENTINE'S DAY 💘</h1>
-<p>Lifetime subscription activated 😌</p>
-<p>No refunds. Forever recharged ♾️ </p>
-</div>
-
+<div id="screen">
+<h1 id="title"></h1>
+<p id="msg"></p>
 <div id="love">I LOVE YOU ❤️</div>
+</div>
 
 <script>
 window.onload=function(){
@@ -79,13 +94,14 @@ document.getElementById("glow").style.display="block";
 }
 
 setTimeout(()=>{
-document.getElementById("main").style.display="block";
+document.getElementById("title").innerHTML="💘 HAPPY VALENTINE'S DAY 💘";
+document.getElementById("msg").innerHTML="Lifetime subscription activated 😌";
 confetti();
-setInterval(heart,400);
+setInterval(heart,350);
 },3000);
 
 setTimeout(()=>{
-for(let i=0;i<200;i++)heart();
+for(let i=0;i<250;i++)heart();
 document.getElementById("love").style.display="block";
 },30000);
 
@@ -100,7 +116,7 @@ setTimeout(()=>h.remove(),6000);
 }
 
 function confetti(){
-for(let i=0;i<40;i++){
+for(let i=0;i<50;i++){
 let c=document.createElement("div");
 c.className="confetti";
 c.style.left=Math.random()*100+"vw";
