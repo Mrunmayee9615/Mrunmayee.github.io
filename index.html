@@ -89,13 +89,15 @@ to{transform:translateY(120vh);}
 
 <script>
 window.onload=function(){
-alert("🚨 You have been chosen as my Valentine 🚨");
+alert("🚨 LOVE ALERT!! 🚨");
 document.getElementById("glow").style.display="block";
 }
 
 setTimeout(()=>{
 document.getElementById("title").innerHTML="💘 HAPPY VALENTINE'S DAY 💘";
 document.getElementById("msg").innerHTML="Lifetime subscription activated 😌";
+document.getElementById("msg").innerHTML="No Refunds";
+document.getElementByIf("msg").innerHTML="Happy Valentine’s Day, my favorite person ❤️.Even from far away, you make my days brighter and my heart happier. Thank you for being my smile, my comfort, and my forever vibe. Distance doesn’t change how special you are to me, it just makes me miss you more. I’m so lucky to have you. 💕";
 confetti();
 setInterval(heart,350);
 },3000);
@@ -122,7 +124,7 @@ c.className="confetti";
 c.style.left=Math.random()*100+"vw";
 c.style.background="hsl("+Math.random()*360+",100%,50%)";
 document.body.appendChild(c);
-setTimeout(()=>c.remove(),5000);
+setTimeout(()=>c.remove(),2500);
 }
 }
 </script>
