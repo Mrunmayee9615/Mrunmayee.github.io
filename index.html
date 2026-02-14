@@ -2,14 +2,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Valentine 💘</title>
 
 <style>
 body{
 margin:0;
 background:white;
-font-family:Arial;
+font-family:Arial, sans-serif;
 overflow:hidden;
 }
 
@@ -37,12 +36,14 @@ padding:20px;
 h1{
 font-size:36px;
 color:#ff3366;
+margin-bottom:10px;
 }
 
 p{
 font-size:20px;
 max-width:500px;
 color:black;
+line-height:1.4;
 }
 
 #love{
@@ -50,7 +51,7 @@ display:none;
 font-size:60px;
 font-weight:bold;
 color:red;
-margin-top:30px;
+margin-top:25px;
 }
 
 .heart{
@@ -93,21 +94,25 @@ I’m so lucky to have you. 💕<br><br>
 <script>
 alert("LOVE ALERT ❤️");
 
-setInterval(heart,350);
+setInterval(createHeart,350);
 
-setTimeout(()=>{
+setTimeout(function(){
 document.getElementById("love").style.display="block";
 },30000);
 
-function heart(){
-let h=document.createElement("div");
+function createHeart(){
+var h=document.createElement("div");
 h.className="heart";
 h.innerHTML="❤️";
 h.style.left=Math.random()*100+"vw";
 h.style.bottom="-20px";
 document.body.appendChild(h);
-setTimeout(()=>h.remove(),6000);
+setTimeout(function(){h.remove();},6000);
 }
+</script>
+
+</body>
+</html>
 </script>
 
 </body>
