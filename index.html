@@ -41,7 +41,8 @@ color:#ff3366;
 }
 
 p{
-font-size:22px;
+font-size:20px;
+max-width:500px;
 }
 
 #love{
@@ -62,18 +63,6 @@ animation:float 6s linear infinite;
 from{transform:translateY(0);}
 to{transform:translateY(-120vh);}
 }
-
-.confetti{
-position:fixed;
-top:0;
-width:12px;
-height:12px;
-animation:fall 5s linear infinite;
-}
-
-@keyframes fall{
-to{transform:translateY(120vh);}
-}
 </style>
 </head>
 
@@ -83,22 +72,26 @@ to{transform:translateY(120vh);}
 
 <div id="screen">
 <h1 id="title"></h1>
-<p id="msg"></p>
+
+<p id="msg">
+Happy Valentine’s Day, my favorite person ❤️  
+Even from far away, you make my days brighter and my heart happier.  
+Thank you for being my smile, my comfort, and my forever vibe.  
+Distance doesn’t change how special you are to me — it just makes me miss you more.  
+I’m so lucky to have you. 💕
+</p>
+
 <div id="love">I LOVE YOU ❤️</div>
 </div>
 
 <script>
 window.onload=function(){
-alert("🚨 LOVE ALERT!! 🚨");
+alert("LOVE ALERT ❤️");
 document.getElementById("glow").style.display="block";
 }
 
 setTimeout(()=>{
 document.getElementById("title").innerHTML="💘 HAPPY VALENTINE'S DAY 💘";
-document.getElementById("msg").innerHTML="Lifetime subscription activated 😌";
-document.getElementById("msg").innerHTML="No Refunds";
-document.getElementByIf("msg").innerHTML="Happy Valentine’s Day, my favorite person ❤️.Even from far away, you make my days brighter and my heart happier. Thank you for being my smile, my comfort, and my forever vibe. Distance doesn’t change how special you are to me, it just makes me miss you more. I’m so lucky to have you. 💕";
-confetti();
 setInterval(heart,350);
 },3000);
 
@@ -108,6 +101,18 @@ document.getElementById("love").style.display="block";
 },30000);
 
 function heart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.bottom="-20px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+}
+</script>
+
+</body>
+</html>
 let h=document.createElement("div");
 h.className="heart";
 h.innerHTML="❤️";
