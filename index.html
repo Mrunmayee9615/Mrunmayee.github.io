@@ -17,7 +17,6 @@ overflow:hidden;
 position:fixed;
 inset:0;
 box-shadow:0 0 40px red inset;
-display:none;
 pointer-events:none;
 }
 
@@ -43,6 +42,7 @@ color:#ff3366;
 p{
 font-size:20px;
 max-width:500px;
+color:black;
 }
 
 #love{
@@ -71,32 +71,31 @@ to{transform:translateY(-120vh);}
 <div id="glow"></div>
 
 <div id="screen">
-<h1 id="title"></h1>
 
-<p id="msg">
-Happy Valentine’s Day, my favorite person ❤️  
-Even from far away, you make my days brighter and my heart happier.  
-Thank you for being my smile, my comfort, and my forever vibe.  
-Distance doesn’t change how special you are to me — it just makes me miss you more.  
-I’m so lucky to have you. 💕
+<h1>LOVE ALERT ❤️</h1>
+
+<p>
+Happy Valentine’s Day, my favorite person ❤️<br><br>
+
+Even from far away, you make my days brighter and my heart happier.<br>
+Thank you for being my smile, my comfort, and my forever vibe.<br>
+Distance doesn’t change how special you are to me — it just makes me miss you more.<br>
+I’m so lucky to have you. 💕<br><br>
+
+<strong>Lifetime subscription activated 😌</strong><br>
+<strong>No refunds. No transfers.</strong>
 </p>
 
 <div id="love">I LOVE YOU ❤️</div>
+
 </div>
 
 <script>
-window.onload=function(){
 alert("LOVE ALERT ❤️");
-document.getElementById("glow").style.display="block";
-}
 
-setTimeout(()=>{
-document.getElementById("title").innerHTML="💘 HAPPY VALENTINE'S DAY 💘";
 setInterval(heart,350);
-},3000);
 
 setTimeout(()=>{
-for(let i=0;i<250;i++)heart();
 document.getElementById("love").style.display="block";
 },30000);
 
@@ -108,6 +107,11 @@ h.style.left=Math.random()*100+"vw";
 h.style.bottom="-20px";
 document.body.appendChild(h);
 setTimeout(()=>h.remove(),6000);
+}
+</script>
+
+</body>
+</html>
 }
 </script>
 
